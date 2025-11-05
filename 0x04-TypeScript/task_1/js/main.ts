@@ -1,3 +1,4 @@
+// Define the Teacher interface
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -5,6 +6,16 @@ interface Teacher {
   yearsOfExperience?: number;
   location: string;
   [propName: string]: any;
+}
+
+// Define the Directors interface that extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+// Define the Director interface that extends Teacher (singular version)
+interface Director extends Teacher {
+  numberOfReports: number;
 }
 
 // Create teacher examples
@@ -30,12 +41,8 @@ const teacher4: Teacher = {
 
 console.log(teacher4);
 
-interface Directors extends Teacher {
-  numberOfReports: number;
-}
-
 // Create director example
-const director1: Teacher = {
+const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
   location: 'London',
