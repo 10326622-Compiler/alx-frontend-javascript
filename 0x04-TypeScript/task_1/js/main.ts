@@ -30,6 +30,17 @@ const teacher4: Teacher = {
 
 console.log(teacher4);
 
-// This would cause a TypeScript error (uncommenting will show the error):
-// teacher3.firstName = 'Mike'; // Error: Cannot assign to 'firstName' because it is a read-only property
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
 
+// Create director example
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+console.log(director1);
